@@ -20,7 +20,7 @@
       </div>
       <div style="margin-top:20px;">
         <input type="file" id="change" accept="image" @change="change">
-        <label for="change"></label>
+        <label for="change">1123123</label>
       </div>
 
     </div>
@@ -59,6 +59,15 @@
         zoomable:true,
         ready: function () {
           self.croppable = true;
+        },
+        crop(event) {
+          console.log(event.detail.x);
+          console.log(event.detail.y);
+          console.log(event.detail.width);
+          console.log(event.detail.height);
+          console.log(event.detail.rotate);
+          console.log(event.detail.scaleX);
+          console.log(event.detail.scaleY);
         }
       });
     },
@@ -98,6 +107,7 @@
         }
         // Crop
         croppedCanvas = this.cropper.getCroppedCanvas();
+        console.log(croppedCanvas);
         console.log(this.cropper)
         // Round
         roundedCanvas = this.getRoundedCanvas(croppedCanvas);
@@ -107,7 +117,7 @@
 
       },
       getRoundedCanvas (sourceCanvas) {
-
+        console.log(sourceCanvas)
         var canvas = document.createElement('canvas');
         var context = canvas.getContext('2d');
         var width = sourceCanvas.width;

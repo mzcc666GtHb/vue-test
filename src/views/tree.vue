@@ -1,31 +1,12 @@
 <template>
-<div>
   <div id="all">
     <tree :model="root" :length="length"></tree>
   </div>
-  <router-link to="/img-load">图片上传代码</router-link>
-  <br>
-  <router-link to="/cropper">裁剪并上传头像1</router-link>
-  <br>
-  <router-link to="/imgupload">裁剪并上传头像2</router-link>
-
-
-
-  <div class="box" id="box" @click="uploadImgs">
-    <input type="file" ref="fileBtn">
-    上传图片
-  </div>
-</div>
-
-
 </template>
+
 <script>
   import tree from './tree.vue'
   export default  {
-    name:"tree1",
-    components:{
-      tree
-    },
     data() {
       return {
         root:{
@@ -77,23 +58,10 @@
           ]
         },
         length:2
-    }
-    },
-    methods:{
-      uploadImgs(){
-        this.$refs.fileBtn.click()
       }
     }
-
   }
 </script>
 <style>
-  ul {
-    padding-left: 1em;
-    line-height: 1.5em;
-    list-style-type: dot;
-  }
-  input[type=file]{
-    display: none;
-  }
+
 </style>
